@@ -2,7 +2,7 @@
 //если была нажата кнопка "регистрация"
 if( isset($_POST["registration"]) &&
 	// и поля email, name и password не пустые
-	&& $_POST["email"] != "" && $_POST["password"] != "" && $_POST["name"] != ""
+	$_POST["email"] != "" && $_POST["password"] != "" && $_POST["name"] != ""
 ) {
     //делаем запрос к БД на выбор строки где email соответствуют введенным
     $sql = "SELECT * FROM `users` WHERE `email` LIKE '" . $_POST["email"] . "'";

@@ -2,7 +2,7 @@
 //если была нажата кнопка "войти"
 if( isset($_POST["account"]) &&
 	// и поля email и password не пустые
-	&& $_POST["email"] != "" && $_POST["password"] != ""
+	$_POST["email"] != "" && $_POST["password"] != ""
 ) {
 	//делаем запрос к БД на выбор строки где email и password соответствуют введенным
 	$sql = "SELECT * FROM `users` WHERE `email` LIKE '" . $_POST["email"] . "' AND `password` LIKE '" . $_POST["password"] . "'";

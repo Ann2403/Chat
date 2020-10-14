@@ -136,7 +136,7 @@ body {
           основной блок 
 **********************************/
 
-#content {
+.content {
 	width: 900px;
 	height: calc(100% - 100px);
 	background: #bafdf7;
@@ -146,19 +146,19 @@ body {
 /**********************************
    левый блок (поиск и контакты)
 **********************************/
-#user {
+.user {
 	width: 250px;
 	height: 100%;
 	float: left;
 }
 
-#search{
+.search{
 	height: 30px;
 	padding: 10px;
 	width: 100%;
 }
 
-#search input {
+.search input {
 	width: calc(70% - 20px);
 	background: aqua;
 	border: none;
@@ -171,7 +171,7 @@ body {
 	padding: 0 10px;
 }
 
-#search button {
+.search button {
 	width: 40px;
 	height: 30px;
 	border: none;
@@ -180,85 +180,77 @@ body {
 	background: aqua;
 }
 
-#search button:active {
+.search button:active {
 	background: blue;
 }
 
-#search button img{
+.search button img{
 	width: 100%;
 	height: 100%;
 }
 
-#list {
+.list {
 	height: calc(100% - 50px);
 	overflow-y: auto;
 }
 
-#list ul {
+.list ul {
 	margin: 0;
     padding: 0;
     width: 100%;
     list-style: none;
 }
 
-#list ul li {
+.list ul li {
 	padding: 10px;
+	height: 60px;
 	width: calc(100% - 20px);
 	position: relative;
 }
 
-#list ul li a {
+.list ul li a {
 	text-decoration: none;
 	color: black;
 }
 
-#list ul .avatar{
+.list ul .avatar {
 	width: 60px;
 	height: 60px;
-	float: left;
 	margin-right: 15px;
+	float: left;
 }
 
-#list ul .avatar img {
+.list ul .avatar img {
 	width: 100%;
 	height: 100%;
 }
 
-#list ul li .time {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-}
-
-#list h2, #list p {
-	margin: 0;
-}
-
-#list h2 {
-	margin-bottom: 5px;
+.list h2 {
+	margin: 15px 80px;
+    position: absolute;
 }
 
 /**********************************
               скролл
 **********************************/
 
-#list::-webkit-scrollbar-track, 
-#sms::-webkit-scrollbar-track,
+.list::-webkit-scrollbar-track, 
+.sms::-webkit-scrollbar-track,
 .modal .content::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #F5F5F5;
 	border-radius: 10px;
 }
 
-#list::-webkit-scrollbar, 
-#sms::-webkit-scrollbar,
+.list::-webkit-scrollbar, 
+.sms::-webkit-scrollbar,
 .modal .content::-webkit-scrollbar {
 	width: 5px;
 	background-color: #F5F5F5;
 }
 
-#list::-webkit-scrollbar-thumb, 
-#sms::-webkit-scrollbar-thumb,
+.list::-webkit-scrollbar-thumb, 
+.sms::-webkit-scrollbar-thumb,
 .modal .content::-webkit-scrollbar-thumb {
 	background-color: #3366FF;
 	border-radius: 10px;
@@ -275,53 +267,55 @@ body {
 /**********************************
     переписка с пользователем
 **********************************/
-#message {
+.message {
 	float: left;
 	width: calc(100% - 250px);
 	height: 100%;
 }
 
-#sms {
+.sms {
 	overflow-y: auto;
 	width: 100%;
 	height: 90%;
 }
 
-#sms ul {
+.sms ul {
 	list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#sms ul li {
+.sms ul li {
 	position: relative;
 	padding: 10px;
+	min-height: 60px;
 }
 
-#sms ul li a {
+.sms ul li a {
 	text-decoration: none;
 	color: black;
 }
 
-#sms ul .avatar {
+.sms ul .avatar {
 	width: 60px;
 	height: 60px;
 	margin-right: 10px;
 	float: left;
 }
 
-#sms ul .avatar img {
+.sms ul .avatar img {
 	width: 100%;
 	height: 100%;
 }
 
-#sms h2, #sms p {
-	margin: 0;
+.sms h2, .sms p {
+	margin: 15px 70px;
+    position: absolute;
 }
 
-#sms ul li .time {
+.sms ul li .time {
 	position: absolute;
-	top: 10px;
+	margin-top: 15px;
 	right: 15px;
 }
 
