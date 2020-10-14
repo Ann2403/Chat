@@ -1,0 +1,436 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+	background-image: url(images/background.png);
+}
+
+/**********************************
+              шапка
+**********************************/
+
+.header {
+	width: 100%;
+	height: 50px;
+	background: blue;
+}
+
+.logo {
+	width: 100px;
+	height: 100%;
+	position: relative;
+	left: 10px;
+	float: left;
+}
+
+.logo img {
+	width: 50%;
+	position: absolute;
+}
+
+.logo span {
+	font-size: 20px;
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    color: aqua;
+}
+
+.menu {
+	float: right;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.menu a {
+	color: aqua;
+    font-size: 20px;
+    text-decoration: none;
+    height: calc(100% - 14px);
+    display: block;
+    float: left;
+    padding: 14px 10px 0;
+}
+
+.menu a:hover {
+	background: #8EC7F7;
+}
+
+/**********************************
+          блок входа
+**********************************/
+.parent {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+	justify-content: center; 
+}
+
+.hello {
+	width: 630px;
+	height: 350px;
+	background-image: url(images/hello.jpg);
+    margin: 0 auto;
+    position: absolute;
+    display: inline-block;
+    white-space: normal;
+	vertical-align: middle;
+}
+
+/**********************************
+         модальные окна
+**********************************/
+
+.modal {
+	display: none;
+	width: 270px;
+	background: #baeefde0;
+	border-radius: 10px;
+	border: 2px solid blue;
+	position: absolute;
+	left: calc(50% - 200px);
+	padding: 20px;
+	max-height: 400px;
+}
+
+.modal .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	margin: 0;
+}
+
+.modal .content {
+	width: 96%;
+	height: 350px;
+	margin-top: 25px;
+}
+.modal form {
+	margin-left: 30px;
+}
+
+.modal input {
+	width: 200px;
+}
+
+/**********************************
+ошибка при авторизации/регистрации
+**********************************/
+.errorUser {
+	background-color: #00e7ff;
+    color: blue;
+	text-align: center;
+	margin: 0;
+}
+
+/**********************************
+          основной блок 
+**********************************/
+
+#content {
+	width: 900px;
+	height: calc(100% - 100px);
+	background: #bafdf7;
+	margin: 0 auto;
+}
+
+/**********************************
+   левый блок (поиск и контакты)
+**********************************/
+#user {
+	width: 250px;
+	height: 100%;
+	float: left;
+}
+
+#search{
+	height: 30px;
+	padding: 10px;
+	width: 100%;
+}
+
+#search input {
+	width: calc(70% - 20px);
+	background: aqua;
+	border: none;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	float: left;
+	margin-right: 10px; 
+	outline: none;
+	padding: 0 10px;
+}
+
+#search button {
+	width: 40px;
+	height: 30px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: aqua;
+}
+
+#search button:active {
+	background: blue;
+}
+
+#search button img{
+	width: 100%;
+	height: 100%;
+}
+
+#list {
+	height: calc(100% - 50px);
+	overflow-y: auto;
+}
+
+#list ul {
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+#list ul li {
+	padding: 10px;
+	width: calc(100% - 20px);
+	position: relative;
+}
+
+#list ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#list ul .avatar{
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 15px;
+}
+
+#list ul .avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+#list ul li .time {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+
+#list h2, #list p {
+	margin: 0;
+}
+
+#list h2 {
+	margin-bottom: 5px;
+}
+
+/**********************************
+              скролл
+**********************************/
+
+#list::-webkit-scrollbar-track, 
+#sms::-webkit-scrollbar-track,
+.modal .content::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#list::-webkit-scrollbar, 
+#sms::-webkit-scrollbar,
+.modal .content::-webkit-scrollbar {
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#list::-webkit-scrollbar-thumb, 
+#sms::-webkit-scrollbar-thumb,
+.modal .content::-webkit-scrollbar-thumb {
+	background-color: #3366FF;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(0deg,
+	                                          rgba(255, 255, 255, 0.5) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, 0.5) 50%,
+											  rgba(255, 255, 255, 0.5) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+/**********************************
+    переписка с пользователем
+**********************************/
+#message {
+	float: left;
+	width: calc(100% - 250px);
+	height: 100%;
+}
+
+#sms {
+	overflow-y: auto;
+	width: 100%;
+	height: 90%;
+}
+
+#sms ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sms ul li {
+	position: relative;
+	padding: 10px;
+}
+
+#sms ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#sms ul .avatar {
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float: left;
+}
+
+#sms ul .avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+#sms h2, #sms p {
+	margin: 0;
+}
+
+#sms ul li .time {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+
+/**********************************
+    форма для отправки сообщения
+**********************************/
+
+#form {
+	height: calc(10% - 20px);
+	padding: 10px;
+}
+
+#form button {
+	border: 0;
+	background: none;
+	outline: none;
+	width: 10%;
+	height: 90%;
+	cursor: pointer;
+	float: right;
+}
+
+#form button img {
+	width: 100%;
+	height: 100%;
+}
+
+#form textarea {
+	width: 88%;
+	height: 80%;
+	outline: none;
+}
+
+
+
+/**********************************
+    модальное окно с контактами
+**********************************/
+
+#contact-modal ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#contact-modal ul li {
+	position: relative;
+	padding: 10px;
+}
+
+#contact-modal ul .avatar {
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float: left;
+}
+
+#contact-modal ul .avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+#contact-modal h2 {
+	margin: 10px;
+}
+
+/**********************************
+  модальное окно входа в аккаунт
+**********************************/
+
+#account-modal input,
+#registrationBlock input {
+	width: 95%;
+	height: 80%;
+	outline: none;
+}
+
+#account-modal h6,
+#registrationBlock h6 {
+	margin: 0;
+	font-size: 20px;
+}
+
+#account-modal div,
+#registrationBlock div {
+	margin-top: 25px;
+}
+
+#account-modal button,
+#registrationBlock button {
+	float: right;
+    margin-right: 30%;
+    margin-top: 25px;
+    height: 25px;
+    width: 160px;
+    position: relative;
+    font-size: 15px;
+}
+
+#registrationBlock {
+
+	width: 360px;
+	background: white;
+	border-radius: 10px;
+	border: 2px solid blue;
+	position: absolute;
+	top: 200px;
+	left: calc(50% - 200px);
+	padding: 20px;
+	max-height: 400px;
+	z-index: 99999;
+}
