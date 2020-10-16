@@ -114,6 +114,7 @@ body {
 	height: 350px;
 	margin-top: 25px;
 }
+
 .modal form {
 	margin-left: 30px;
 }
@@ -137,9 +138,9 @@ body {
 **********************************/
 
 .content {
-	width: 900px;
+	width: 1000px;
 	height: calc(100% - 100px);
-	background: #bafdf7;
+	background: #bafdf7a3;;
 	margin: 0 auto;
 }
 
@@ -150,6 +151,7 @@ body {
 	width: 250px;
 	height: 100%;
 	float: left;
+	margin-right: 150px;
 }
 
 .search{
@@ -202,10 +204,11 @@ body {
 }
 
 .list ul li {
-	padding: 10px;
+	margin: 10px;
 	height: 60px;
-	width: calc(100% - 20px);
+	width: calc(100% - 30px);
 	position: relative;
+	background: radial-gradient(circle at 65% 15%, #0037ff, #00f3ff);
 }
 
 .list ul li a {
@@ -228,6 +231,69 @@ body {
 .list h2 {
 	margin: 15px 80px;
     position: absolute;
+}
+
+/**********************************
+    переписка с пользователем
+**********************************/
+.message {
+	float: left;
+	width: calc(100% - 400px);
+	height: 100%;
+}
+
+.sms {
+	overflow-y: auto;
+	width: 100%;
+	height: 90%;
+}
+
+ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contentSMS {
+	display: inline-block;
+	max-width: 50%;
+    text-overflow: ellipsis;
+	word-wrap: break-word;
+	background: radial-gradient(at top, #2569ef, #00dcff);
+    border-radius: 5%;
+}
+
+ul li {
+	position: relative;
+	padding: 10px;
+	min-height: 60px;
+	margin-right: 20px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+ul .avatar {
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float: left;
+}
+
+ul .avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+.sms h2, .content h2, .sms p {
+	margin-left: 70px;
+}
+
+.right {
+	float: right;
+	margin: 0;
 }
 
 /**********************************
@@ -264,60 +330,6 @@ body {
 											  transparent)
 }
 
-/**********************************
-    переписка с пользователем
-**********************************/
-.message {
-	float: left;
-	width: calc(100% - 250px);
-	height: 100%;
-}
-
-.sms {
-	overflow-y: auto;
-	width: 100%;
-	height: 90%;
-}
-
-.sms ul {
-	list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sms ul li {
-	position: relative;
-	padding: 10px;
-	min-height: 60px;
-}
-
-.sms ul li a {
-	text-decoration: none;
-	color: black;
-}
-
-.sms ul .avatar {
-	width: 60px;
-	height: 60px;
-	margin-right: 10px;
-	float: left;
-}
-
-.sms ul .avatar img {
-	width: 100%;
-	height: 100%;
-}
-
-.sms h2, .sms p {
-	margin: 15px 70px;
-    position: absolute;
-}
-
-.sms ul li .time {
-	position: absolute;
-	margin-top: 15px;
-	right: 15px;
-}
 
 /**********************************
     форма для отправки сообщения
@@ -349,39 +361,21 @@ body {
 	outline: none;
 }
 
-
-
 /**********************************
-    модальное окно с контактами
+    модальное окно с друзьями
 **********************************/
-
-#contact-modal ul {
-	list-style: none;
-    margin: 0;
-    padding: 0;
+#friends_modal {
+	top: 50px;
 }
 
-#contact-modal ul li {
-	position: relative;
-	padding: 10px;
+.online {
+	height: 10px;
+    width: 10px;
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+    right: 10px;
 }
-
-#contact-modal ul .avatar {
-	width: 60px;
-	height: 60px;
-	margin-right: 10px;
-	float: left;
-}
-
-#contact-modal ul .avatar img {
-	width: 100%;
-	height: 100%;
-}
-
-#contact-modal h2 {
-	margin: 10px;
-}
-
 /**********************************
   модальное окно входа в аккаунт
 **********************************/

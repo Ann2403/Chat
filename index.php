@@ -60,18 +60,14 @@ include "configs/bd.php";
 				</button>
 			</form>
 				<?php
-					} else {
-
-					}
+					} else { }
 				?>
-			
 		</div>
 	</div>
 
 	<?php
-	//подключение модального окна с контактами
-	//include 'moduls/contacts.php'; 
-
+	//подключение модального окна с друзьями
+	include 'parts/modalFriends.php'; 
 	}
 	?>
 </body>

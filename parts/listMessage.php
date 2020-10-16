@@ -18,20 +18,25 @@
         //пока не достигнется количества результатов
         while ($i < $col_sms) {
             //преобразовываем полученный результат в ассоциативный массив
-            $sms = mysqli_fetch_assoc($result);
-            echo "<li>";
-                //выводим имя конкретного пользователя
-                $sql = "SELECT photo FROM users WHERE id =" . $sms["id_user"];
-                //выполняем запрос
-                $user = mysqli_query($connect, $sql);
-                //записываем в переменную массив с данными пользователя
-                $user = mysqli_fetch_assoc($user);
-                echo "<div class=\"avatar\">
-                    <img src='/css/images/" . $user["photo"] . "'>
-                </div>";
-                echo "<p>" . $sms["text"] . "</p>";
-                echo "<div class=\"time\">" . $sms["time"] . "</div>";	
-            echo "</li>";
+            $sms = mysqli_fetch_assoc($result); ?>
+            <li>
+                <div class='contentSMS' <?php if($sms['id_user'] == $_COOKIE['user_id']) {?> style="float: right" <?php } ?> >
+                    <?php
+                    //выводим имя конкретного пользователя
+                    $sql = "SELECT id, photo FROM users WHERE id =" . $sms["id_user"];
+                    //выполняем запрос
+                    $user = mysqli_query($connect, $sql);
+                    //записываем в переменную массив с данными пользователя
+                    $user = mysqli_fetch_assoc($user);
+                    if($user["id"] != $_COOKIE["user_id"]) { ?>
+                        <div class="avatar">
+                            <img src='/css/images/<?php echo $user["photo"]; ?>'>
+                        </div>
+                    <?php } ?>
+                    <p <?php if($sms['id_user'] == $_COOKIE['user_id']) {?> style="margin-left: 10px" <?php } ?> > <?php echo $sms["text"]; ?></p>
+                    <p class="right"> <?php echo $sms["time"]; ?></p>
+                </div>
+            </li> <?php
             $i++;
         }
     } else { } ?>

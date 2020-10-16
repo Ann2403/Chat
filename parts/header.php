@@ -5,7 +5,7 @@
 
     <div class="menu">
 	<?php if(isset($_COOKIE["user_id"])) { ?>
-        <a href="#" id="contact">Контакты</a>
+        <a href="#" id="open" onclick="openModal(0)">Друзья</a>
         <a href="#">Настройки</a>
         <?php 
         $sql = "SELECT * FROM users WHERE id=" . $_COOKIE["user_id"];
