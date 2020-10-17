@@ -40,12 +40,11 @@ include "configs/bd.php";
 		</div>
 
 		<div class="message">
-			<div class="sms">
+			
 			<?php
 			//Вывод сообщений
 			include "parts/listMessage.php";
 			?>
-			</div>
 
 			
 				<?php
@@ -70,5 +69,7 @@ include "configs/bd.php";
 	include 'parts/modalFriends.php'; 
 	}
 	?>
+
+<script src="js/ajax.js"></script>
 </body>
 </html>

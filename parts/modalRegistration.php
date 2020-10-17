@@ -17,7 +17,7 @@ if( isset($_POST["registration"]) &&
         //в ином случае
     } else {
         //делаем запрос к БД на добавление новой строки с значениями полей соответствующими введенным
-        $sql = "INSERT INTO users (email, password, name) VALUES ('" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["name"] . "')";
+        $sql = "INSERT INTO `users` (`email`, `password`, `name`) VALUES ('" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["name"] . "')";
         //если запрос был выполнен
         if(mysqli_query($connect, $sql)) {
             //выводим сообщение

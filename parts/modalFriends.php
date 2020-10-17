@@ -1,8 +1,8 @@
 <div class='modal' id="friends_modal">
     <p class="close" onclick='closeModal(0)'>X</p> 
 
-    <div class="content">
-        <ul id="friend_list">
+    <div class="list">
+        <ul>
             <?php
             //делаем запрос к БД на выбор всех строк где значение поля user_1 = id авторизованог опоьзователя
             $sql = "SELECT * FROM friends WHERE user_1=" . $_COOKIE["user_id"];
@@ -26,7 +26,7 @@
                         <div class="avatar">
                             <img src='/css/images/<?php echo $friend["photo"]; ?> '>
                         </div>
-                        <h2><?php echo $friend["name"]; ?></h2>
+                        <h3><?php echo $friend["name"]; ?></h3>
                         <div class='online' <?php if ($friend["online"] == "1") {?> style="background: green" <?php } ?> ></div>	
                     </a>
                 </li>
