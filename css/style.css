@@ -99,6 +99,7 @@ body {
 	left: calc(50% - 200px);
 	padding: 20px;
 	max-height: 400px;
+	overflow-y: auto;
 }
 
 .modal .close {
@@ -272,6 +273,12 @@ ul {
     bottom: 5px;
 }
 
+.user_friend .btn_friend {
+	bottom: 5px;
+    position: absolute;
+    right: 20px;
+}
+
 .message {
 	float: left;
 	width: calc(100% - 300px);
@@ -300,7 +307,7 @@ ul {
 	margin-right: 20px;
 }
 
-.sms ul li a {
+a {
 	text-decoration: none;
 	color: black;
 }
@@ -320,7 +327,7 @@ ul {
 
 .list::-webkit-scrollbar-track, 
 .sms::-webkit-scrollbar-track,
-.modal .content::-webkit-scrollbar-track {
+.modal::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #F5F5F5;
 	border-radius: 10px;
@@ -328,14 +335,14 @@ ul {
 
 .list::-webkit-scrollbar, 
 .sms::-webkit-scrollbar,
-.modal .content::-webkit-scrollbar {
+.modal::-webkit-scrollbar {
 	width: 5px;
 	background-color: #F5F5F5;
 }
 
 .list::-webkit-scrollbar-thumb, 
 .sms::-webkit-scrollbar-thumb,
-.modal .content::-webkit-scrollbar-thumb {
+.modal::-webkit-scrollbar-thumb {
 	background-color: #3366FF;
 	border-radius: 10px;
 	background-image: -webkit-linear-gradient(0deg,
@@ -382,11 +389,11 @@ ul {
 /**********************************
     модальное окно с друзьями
 **********************************/
-#friends_modal {
+#modal_user {
 	top: 50px;
 }
 
-#friends_modal li {
+#modal_user li {
 	background: #fff0;
 }
 
@@ -399,6 +406,54 @@ ul {
 	right: 10px;
 	top: 10px;
 }
+
+/**********************************
+    модальное окно с натройками
+**********************************/
+.settings {
+    top: 50px;
+    left: calc(50% - 450px);
+    width: 900px;
+	background: #baf9f9;
+	height: calc(100% - 100px);
+	margin: 0 auto;
+}
+
+.settings a {
+	position: relative;
+    left: 870px;
+    top: 10px;
+}
+
+.settings h2 {
+	text-align: center;
+}
+
+.settings form {
+	margin-left: 30px;
+    height: 170px;
+    position: relative;
+}
+
+.settings div {
+	height: 40%;
+    float: left;
+    width: 40%;
+    margin: 0 40px;
+}
+
+.settings div input {
+	width: 100%;
+    height: 40%;
+}
+
+.settings form button {
+	position: absolute;
+    left: 40px;
+    bottom: 0;
+    height: 15%;
+}
+
 
 /**********************************
   модальное окно входа в аккаунт

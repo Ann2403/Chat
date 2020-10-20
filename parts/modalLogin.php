@@ -4,8 +4,9 @@ if( isset($_POST["account"]) &&
 	// и поля email и password не пустые
 	$_POST["email"] != "" && $_POST["password"] != ""
 ) {
+	$password = md5($_POST["password"]);
 	//делаем запрос к БД на выбор строки где email и password соответствуют введенным
-	$sql = "SELECT * FROM `users` WHERE `email` LIKE '" . $_POST["email"] . "' AND `password` LIKE '" . $_POST["password"] . "'";
+	$sql = "SELECT * FROM `users` WHERE `email` LIKE '" . $_POST["email"] . "' AND `password` LIKE '" . $password . "'";
 	//получаем результат выполнения запроса
 	$result = mysqli_query($connect, $sql);
 	//инициализируем переменную дя хранения выбранных полей соответствующих запросу
@@ -19,7 +20,7 @@ if( isset($_POST["account"]) &&
 		//если запрос был выполнен
 		if(mysqli_query($connect, $sql)) {
 			//создаем куки для хранения данных пользователя
-			setcookie("user_id", $user["id"], time() + 60*60);
+			setcookie("user_id", $user["id"]);
 			//переходим на главную страницу
 			header("Location: /");
 			//если нет

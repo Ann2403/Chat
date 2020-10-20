@@ -16,8 +16,9 @@ if( isset($_POST["registration"]) &&
         echo "<h2 class='errorUser'>Пользователь уже существует!</h2>";
         //в ином случае
     } else {
+        $password = md5($_POST["password"]);
         //делаем запрос к БД на добавление новой строки с значениями полей соответствующими введенным
-        $sql = "INSERT INTO `users` (`email`, `password`, `name`) VALUES ('" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["name"] . "')";
+        $sql = "INSERT INTO `users` (`email`, `password`, `name`) VALUES ('" . $_POST["email"] . "', '" . $password . "', '" . $_POST["name"] . "')";
         //если запрос был выполнен
         if(mysqli_query($connect, $sql)) {
             //выводим сообщение
@@ -28,7 +29,6 @@ if( isset($_POST["registration"]) &&
             echo "<h2>Произошла ошибка</h2>" . mysqli_error($connect);
         }
     }
-	
 }
 ?>
 

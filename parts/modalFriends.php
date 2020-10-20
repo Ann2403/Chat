@@ -1,4 +1,4 @@
-<div class='modal' id="friends_modal">
+<div class='modal' id="modal_user">
     <p class="close" onclick='closeModal(0)'>X</p> 
 
     <div class="list">

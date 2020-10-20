@@ -40,16 +40,14 @@ include "configs/bd.php";
 		</div>
 
 		<div class="message">
-			
-			<?php
-			//Вывод сообщений
-			include "parts/listMessage.php";
-			?>
 
 			
 				<?php
-					if (isset($_GET["user"])) {?>
-						<form id="form" action="/modules/setMessage.php" method="POST">
+					if (isset($_GET["user"])) {
+						//$user_friend = $_GET["user"];
+					include "parts/headerFriend.php";
+					include "parts/listMessage.php"; ?>
+				<form id="form" action="/modules/setMessage.php" method="POST">
 				
 				<input type="hidden" name="id_user_2" value="<?php echo $_GET["user"]; ?>" >
 				<input type="hidden" name="id_user" value="<?php echo $_COOKIE["user_id"]; ?>" >
@@ -69,7 +67,5 @@ include "configs/bd.php";
 	include 'parts/modalFriends.php'; 
 	}
 	?>
-
-<script src="js/ajax.js"></script>
 </body>
 </html>
