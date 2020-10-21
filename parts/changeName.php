@@ -20,5 +20,5 @@ if (isset($_POST["change_name"]) && $_POST['new_name'] != "") {
         <label><b>Введите новое имя:</b></label>
         <input type="text" name="new_name">
     </div>
-    <button name='change_name' type="submit">Сменить имя</button>
+    <button name='change_name' type="submit" style="bottom: 70px;">Сменить имя</button>
 </form>

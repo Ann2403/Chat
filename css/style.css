@@ -216,14 +216,14 @@ ul {
 	color: black;
 }
 
-.list ul .avatar {
+.avatar {
 	width: 40px;
 	height: 40px;
 	margin-right: 15px;
 	float: left;
 }
 
-.list ul .avatar img {
+.avatar img {
 	width: 100%;
 	height: 100%;
 }
@@ -244,7 +244,7 @@ ul {
     position: relative;
 }
 
-.user_friend .avatar {
+#avatarSettings .avatar, .user_friend .avatar {
 	width: 60px;
     height: 60px;
     margin-right: 15px;
@@ -444,8 +444,19 @@ a {
 
 .settings div input {
 	width: 100%;
-    height: 40%;
+	height: 40%;
+	margin: 0;
 }
+
+.settings .avatar input {
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+}
+
 
 .settings form button {
 	position: absolute;
@@ -454,6 +465,11 @@ a {
     height: 15%;
 }
 
+#avatarSettings {
+	height: 100%;
+    width: 100%;
+    margin: 10px 0;
+}
 
 /**********************************
   модальное окно входа в аккаунт

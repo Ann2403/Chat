@@ -14,7 +14,11 @@
         $user = mysqli_fetch_assoc($result);
         ?>
         <!-- Сделать вывод иконки пользователя при авторизации не убирая кнопку выход-->
-        <a href="/modules/exit.php"><?php echo $user["name"]; ?></a>
+        <a href="/modules/exit.php" style="padding: 10px 0 0">
+            <div class="avatar">
+                <img src='/css/images/<?php echo $user["photo"]; ?>'>
+            </div>
+        </a>
     <?php } else {?>
         <a href="#" id="open" onclick="openModal(0)">Войти</a>
     <?php } ?>

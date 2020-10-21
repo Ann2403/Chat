@@ -13,11 +13,15 @@ include "configs/bd.php";
     <?php include "parts/header.php"; ?>
     <div class='settings'>
         <a href='/'>X</a> 
+
         <h2>Смена пароля</h2>
         <?php include "parts/changePassword.php"; ?>
 
         <h2>Смена имени</h2>
         <?php include "parts/changeName.php"; ?>
+
+        <h2>Смена аватарки</h2>
+        <?php include "parts/changeAvatar.php"; ?>
     </div>
 </body>
 </html>
