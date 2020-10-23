@@ -19,17 +19,20 @@
     $result = mysqli_query($connect, $sql);
     //получаем количество результатов
     $col_sms = mysqli_num_rows($result);
+    setcookie("id_sms_now", $col_sms, "", '/');
     $i = 0;
     //пока не достигнется количества результатов
     while ($i < $col_sms) {
         //преобразовываем полученный результат в ассоциативный массив
-        $sms = mysqli_fetch_assoc($result); ?>
+        $sms = mysqli_fetch_assoc($result);       
+        ?>
         <li>
-            <div class='contentSMS' <?php if($sms['id_user'] == $_COOKIE['user_id']) {?> style="float: right" <?php } ?> >
-                <p style="margin-left: 10px"> <?php echo $sms["text"]; ?></p>
-                <p class="right"> <?php echo $sms["time"]; ?></p>
+            <div class='contentSMS'<?php if($sms['id_user'] == $_COOKIE['user_id']) {?> style="float: right" <?php } ?> >
+                <p style="margin-left: 10px"><?php echo $sms["text"]; ?></p>
+                <p class="right"><?php echo $sms["time"]; ?></p>
             </div>
-        </li> <?php
+        </li>
+        <?php
         $i++;
     } ?>
 </ul>

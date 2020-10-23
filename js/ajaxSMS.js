@@ -1,4 +1,7 @@
-let form = document.querySelector('#form');
+let form = document.querySelector('#form'), 
+	sms = document.querySelector('.sms');
+
+	scrollTop();
 form.onsubmit = function(event) {
 	event.preventDefault();
 
@@ -14,7 +17,7 @@ form.onsubmit = function(event) {
 	ajax.open("POST", form.action, false);
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send(data);
-    document.querySelector('.sms').innerHTML = ajax.response;
+	sms.innerHTML = ajax.response;
     document.querySelector('textarea').value = "";
 };
 
@@ -29,18 +32,17 @@ setInterval(() => {
     aj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	//отправляем запрос
 	aj.send(data);
+	
 	let arrayCookie = document.cookie.split('; '),
 	cookie1 = arrayCookie[1].split('=')[1],
 	cookie2 = arrayCookie[2].split('=')[1];
+	
 	if(cookie1 != cookie2) {
 		document.cookie = "id_sms=" + cookie2 + "; path=/";
-		//получаем результат (меняем контент в блоке #friend_list)
-		document.querySelector('.sms').innerHTML = aj.response;
+		sms.innerHTML = aj.response;
 	}
-	//document.cookie = "id_sms_now=null; path=/; max-age=0";
 }, 3000);
 
-function updateSMS() {
-	console.log(aj);
-	document.querySelector('.sms').innerHTML = aj.response;
+function scrollTop() {
+	sms.scrollTop = sms.scrollHeight;
 }

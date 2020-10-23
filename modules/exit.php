@@ -9,6 +9,7 @@ if(mysqli_query($connect, $sql)) {
     //очищаем куки на главной странице
     setcookie("user_id", "", 0, "/");
     setcookie("id_sms", "", 0, "/");
+    setcookie("id_sms_now", "", 0, "/");
     //переходим на главную страницу
     header("Location: /");
     //если нет

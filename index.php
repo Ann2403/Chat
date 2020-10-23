@@ -58,6 +58,7 @@ include "configs/bd.php";
 					<img src="/css/images/sent.png">
 				</button>
 			</form>
+			<script src='js/ajaxSMS.js'></script>
 				<?php
 					} else { }
 				?>
@@ -65,11 +66,10 @@ include "configs/bd.php";
 	</div>
 	
 	<?php
-	include "modules/updateSMS.php";
 	//подключение модального окна с друзьями
 	include 'parts/modalFriends.php'; 
 	}
 	?>
-	<script src='js/ajaxSMS.js'></script>
+	
 </body>
 </html>

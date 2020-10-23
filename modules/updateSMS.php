@@ -2,13 +2,13 @@
 //подключаем файл с подключением к БД
 include $_SERVER['DOCUMENT_ROOT'] . "/configs/bd.php";
 
-$sql = "SELECT `id_sms` FROM messages"; 
+$sqlCOOKIE = "SELECT `id_sms` FROM messages"; 
 // выполняем запрос к БД
-$result = mysqli_query($connect, $sql);
+$resultCOOKIE = mysqli_query($connect, $sqlCOOKIE);
 //получаем количество результатов
-$col_sms = mysqli_num_rows($result);
+$colSMS = mysqli_num_rows($resultCOOKIE);
 
-setcookie("id_sms_now", $col_sms);
+setcookie("id_sms_now", $colSMS, "", '/');
 
 if($_COOKIE['id_sms_now'] != $_COOKIE['id_sms']) {
     include $_SERVER['DOCUMENT_ROOT'] . "/parts/listMessage.php";
