@@ -45,8 +45,10 @@ include "configs/bd.php";
 				<?php
 					if (isset($_GET["user"])) {
 						//$user_friend = $_GET["user"];
-					include "parts/headerFriend.php";
-					include "parts/listMessage.php"; ?>
+					include "parts/headerFriend.php"; ?>
+					<div class="sms">
+					<?php include "parts/listMessage.php"; ?>
+					</div>
 				<form id="form" action="/modules/setMessage.php" method="POST">
 				
 				<input type="hidden" name="id_user_2" value="<?php echo $_GET["user"]; ?>" >
@@ -61,11 +63,13 @@ include "configs/bd.php";
 				?>
 		</div>
 	</div>
-
+	
 	<?php
+	include "modules/updateSMS.php";
 	//подключение модального окна с друзьями
 	include 'parts/modalFriends.php'; 
 	}
 	?>
+	<script src='js/ajaxSMS.js'></script>
 </body>
 </html>

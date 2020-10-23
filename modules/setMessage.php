@@ -9,6 +9,7 @@ if(isset($_POST["text"]) && $_POST["text"] != "" ) {
     //выполняем запрос
     mysqli_query($connect, $sql);
     //переходим на главную страницу
-    header("Location: /index.php?user=" . $_POST["id_user_2"] . "");
+    //header("Location: /index.php?user=" . $_POST["id_user_2"] . "");
+    include "../parts/listMessage.php";
 }
 ?>

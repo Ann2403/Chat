@@ -21,6 +21,13 @@ if( isset($_POST["account"]) &&
 		if(mysqli_query($connect, $sql)) {
 			//создаем куки для хранения данных пользователя
 			setcookie("user_id", $user["id"]);
+			$sql = "SELECT `id_sms` FROM messages"; 
+			// выполняем запрос к БД
+			$result = mysqli_query($connect, $sql);
+			//получаем количество результатов
+			$col_sms = mysqli_num_rows($result);
+			setcookie("id_sms", $col_sms);
+
 			//переходим на главную страницу
 			header("Location: /");
 			//если нет
