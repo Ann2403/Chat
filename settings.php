@@ -2,6 +2,7 @@
 include "configs/bd.php";
 ?>
 <script defer src="/js/script.js"></script>
+<script src='js/online.js'></script>
 
 <!DOCTYPE html>
 <html>
@@ -23,5 +24,8 @@ include "configs/bd.php";
         <h2>Смена аватарки</h2>
         <?php include "parts/changeAvatar.php"; ?>
     </div>
+
+    <script src='js/changeAvatar.js'></script>
+    
 </body>
 </html>

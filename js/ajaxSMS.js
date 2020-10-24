@@ -4,7 +4,6 @@ let form = document.querySelector('#form'),
 	scrollTop();
 form.onsubmit = function(event) {
 	event.preventDefault();
-
 	let user_1 = form.querySelector("input[name='id_user']"),
 	user_2 = form.querySelector("input[name='id_user_2']"),
 	text = form.querySelector("textarea"),
@@ -18,11 +17,12 @@ form.onsubmit = function(event) {
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send(data);
 	sms.innerHTML = ajax.response;
+	scrollTop();
     document.querySelector('textarea').value = "";
 };
 
 setInterval(() => {
-    var link = "http://chat.local/modules/updateSMS.php",
+    let link = "http://chat.local/modules/updateSMS.php",
     user_2 = form.querySelector("input[name='id_user_2']"),
     data = "id_user_2=" + user_2.value,
 	//создаем объект для отправки http запроса
@@ -40,6 +40,7 @@ setInterval(() => {
 	if(cookie1 != cookie2) {
 		document.cookie = "id_sms=" + cookie2 + "; path=/";
 		sms.innerHTML = aj.response;
+		scrollTop();
 	}
 }, 3000);
 

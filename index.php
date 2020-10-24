@@ -70,6 +70,7 @@ include "configs/bd.php";
 	include 'parts/modalFriends.php'; 
 	}
 	?>
-	
+	<script src='js/online.js'></script>
+	<script src='js/ofline.js'></script>
 </body>
 </html>

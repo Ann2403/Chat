@@ -23,7 +23,7 @@ if (isset($_POST["change_avatar"]) && $_POST['avatar'] != "") {
         while ($a < 10) { ?>
             <div class="avatar" style="margin: 10px">
                 <img src='../css/images/user<?php echo $a;?>.png'>
-                <input type='radio' value='user<?php echo $a;?>.png' name='avatar'>
+                <input type='radio' onclick="avatarAction(<?php echo $a; ?>)" value='user<?php echo $a;?>.png' name='avatar'>
             </div>
         <?php 
         $a++;
