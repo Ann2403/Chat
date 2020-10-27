@@ -22,7 +22,7 @@ include "configs/bd.php";
 
 	<div class="content">
 		<div class="user">
-			<form action="http://chat.local/contactSearch.php" metod="POST" class="search">
+			<form action="/parts/userSearch.php" metod="POST" class="search">
 				<input type="text" name="poisk-text">
 				<button id="searchContact">
 					<img src="/css/images/search.png">
@@ -64,13 +64,13 @@ include "configs/bd.php";
 				?>
 		</div>
 	</div>
-	
+	<script src='js/searchUser.js'></script>
+	<script src='js/online.js'></script>
 	<?php
 	//подключение модального окна с друзьями
 	include 'parts/modalFriends.php'; 
 	}
 	?>
-	<script src='js/online.js'></script>
-	<script src='js/ofline.js'></script>
+	
 </body>
 </html>

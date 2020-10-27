@@ -6,10 +6,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/configs/bd.php";
 $sql = "UPDATE `users` SET `online` = '0', `data_online` = NOW() WHERE `id` =" . $_COOKIE["user_id"];
 //если запрос был выполнен
 if(mysqli_query($connect, $sql)) {
-    if(isset($_GET['exit'])) {
-
-    } else {
-        //очищаем куки на главной странице
+    //если нету запроса на закрытие окна
+    if(!isset($_GET['exit'])) {
+        //очищаем все куки на главной странице
         setcookie("user_id", "", 0, "/");
         setcookie("id_sms", "", 0, "/");
         setcookie("id_sms_now", "", 0, "/");
