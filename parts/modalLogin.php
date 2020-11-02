@@ -17,11 +17,13 @@ if( isset($_POST["account"]) &&
 		$user = mysqli_fetch_assoc($result);
 		//создаем куки для хранения данных пользователя
 		setcookie("user_id", $user["id"]);
+		//делаем запрос к БД на выбор таблицыmessages
 		$sql = "SELECT `id_sms` FROM messages"; 
 		// выполняем запрос к БД
 		$result = mysqli_query($connect, $sql);
 		//получаем количество результатов
 		$col_sms = mysqli_num_rows($result);
+		//создаем куки для хранения общего количества сообщений
 		setcookie("id_sms", $col_sms);
 		include $_SERVER['DOCUMENT_ROOT'] . "/modules/online.php";
 		//если пользователь не 1

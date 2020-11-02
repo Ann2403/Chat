@@ -8,8 +8,7 @@ if(isset($_POST["text"]) && $_POST["text"] != "" ) {
 	$sql = "INSERT INTO messages (`id_user`, `id_user_2`, `text`) VALUES ('" . $_COOKIE["user_id"] . "', '" . $_POST["id_user_2"] . "', '" . $_POST["text"] . "')";
     //выполняем запрос
     mysqli_query($connect, $sql);
-    //переходим на главную страницу
-    //header("Location: /index.php?user=" . $_POST["id_user_2"] . "");
-    include "../parts/listMessage.php";
+    //подключаем список всех сообщений
+    include $_SERVER['DOCUMENT_ROOT'] . "/parts/listMessage.php";
 }
 ?>
