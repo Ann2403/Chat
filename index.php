@@ -13,37 +13,37 @@ include "configs/bd.php";
 
 <body>
 	<?php 
-	//подключаем шапку сайта
+	// подключаем шапку сайта
 	include "parts/header.php";
-	//если пользователь не аворизован(не существуют куки "user_id")
+	// если пользователь не аворизован(не существуют куки "user_id")
 	if (!isset($_COOKIE["user_id"])) { 
-	//выводим окно приветсвия
+	// выводим окно приветсвия
 	?>
 		<div class='parent'>
 			<div class="hello"></div>
 		</div>
 	<?php 
-		//подключаем модальное окно для авторизации
+		// подключаем модальное окно для авторизации
 		include "parts/modalLogin.php";
-		//и регистрации
+		// и регистрации
 		include "parts/modalRegistration.php";
-	//если авторизован 
+	// если авторизован 
 	} else { 
-	//выводим основной контент
+	// выводим основной контент
 	?>
 		<div class="content">
 			<div class="user">
 				<form action="/parts/userSearch.php" metod="POST" class="search">
 					<input type="text" name="poisk-text">
 					<button id="searchContact">
-						<img src="/css/images/search.png">
+						<img src="/css/images/search.png" alt='Search'>
 					</button>
 				</form>
 
 				<div class="list">			
 					<ul>
 					<?php
-					//подключаем список пользователей
+					// подключаем список пользователей
 					include "parts/listUsers.php";
 					?>
 					</ul>
@@ -51,13 +51,13 @@ include "configs/bd.php";
 			</div>
 
 			<div class="message">
-				<?php //если существует выбранный пользователь(отправленый через GET-запрос)
-				//выводим блок с перепиской и подключаем скрипт с ajax-запросами для отправки сообщений
+				<?php // если существует выбранный пользователь(отправленый через GET-запрос)
+				// выводим блок с перепиской и подключаем скрипт с ajax-запросами для отправки сообщений
 				if (isset($_GET["user"])) {
-					//подключаем шапку блока с перепиской
+					// подключаем шапку блока с перепиской
 					include "parts/headerFriend.php"; ?>
 					<div class="sms">
-						<?php //подключаем вывод сообщений
+						<?php // подключаем вывод сообщений
 						include "parts/listMessage.php"; 
 						?>
 					</div>
@@ -71,7 +71,7 @@ include "configs/bd.php";
 						</button>
 					</form>
 					<script src='js/ajaxSMS.js'></script>
-				<?php //если нет то не выводим ничего
+				<?php // если нет то не выводим ничего
 				} else { }
 				?>
 			</div>
@@ -80,7 +80,7 @@ include "configs/bd.php";
 		<script src='js/searchUser.js'></script>
 		<script src='js/online.js'></script>
 	<?php
-		//подключаем модальное окна с друзьями
+		// подключаем модальное окна с друзьями
 		include 'parts/modalFriends.php'; 
 	}
 	?>
