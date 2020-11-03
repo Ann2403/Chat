@@ -1,6 +1,10 @@
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
+<<<<<<< HEAD
 -- https:// www.phpmyadmin.net/
+=======
+-- https://www.phpmyadmin.net/
+>>>>>>> 2a7bad082ab6785293a6d65eb92fe72a46c0a24f
 --
 -- Хост: 127.0.0.1
 -- Время создания: Ноя 02 2020 г., 08:33
